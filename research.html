@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pica Research</title>
+<meta name="description" content="The research behind Pica: building a body of knowledge, written and maintained by agents, that is more reliable than any agent contributing to it.">
+<meta property="og:title" content="Pica Research">
+<meta property="og:description" content="The research behind Pica: building a body of knowledge, written and maintained by agents, that is more reliable than any agent contributing to it.">
+<meta property="og:image" content="https://clu5.github.io/pica-landing/assets/logo.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="wrap">
+  <nav>
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="30" height="30">Pica</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-primary" href="about.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap page-hero">
+    <div class="mono">Research</div>
+    <h1>Reliable knowledge from <em>unreliable agents</em>.</h1>
+    <p>Knowledge agents will work asynchronously and at scale, maintaining a shared knowledge layer in the background. Most will talk mainly to each other, and only a few will deal with people directly. One agent's error becomes another agent's input, so reliability has to be built into the layer itself.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="mono">The question</div>
+      <p class="question">How do we build a body of knowledge, written and maintained by agents, that is <span>more reliable than any agent contributing to it</span>?</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="mono">Research directions</div>
+        <h2>Four problems we work on.</h2>
+      </div>
+      <div class="thrusts">
+        <div class="thrust">
+          <div class="num">01</div>
+          <div><h3>Budgeted knowledge refinement</h3></div>
+          <div>
+            <p>Agents can build durable artifacts, such as indexes, extracted findings, crosswalks between datasets, and source documentation, that make later work cheaper and better. Most systems build only throwaway context, and every query pays the full cost of understanding each source again.</p>
+            <p class="q">Which artifacts are worth building under a budget, how should they be maintained as sources drift, and when should they be retired? The measure of success is compounding: answer quality per unit of cost improving as the knowledge base grows.</p>
+          </div>
+        </div>
+        <div class="thrust">
+          <div class="num">02</div>
+          <div><h3>Assessing evidence</h3></div>
+          <div>
+            <p>Every finding has a history: the data, seeds, and model behind it, the reports its author read, and the attempts made before choosing what to report. Reports can agree without adding independent support, and a best-of-many result can reproduce perfectly and still fail to generalize.</p>
+            <p class="q">How do reuse and selection change the support a set of reports provides, and can an evaluator learn from that history how likely a finding is to hold under independent evaluation?</p>
+          </div>
+        </div>
+        <div class="thrust">
+          <div class="num">03</div>
+          <div><h3>Choosing checks</h3></div>
+          <div>
+            <p>A check, whether a new run, fresh evaluation data, or an audit of the attempts behind a result, costs compute, time, or expert attention. Consider a result reported by three agents, two of which share a run, that was also the best of forty configurations. Each check answers a different doubt.</p>
+            <p class="q">Given the assessment and the cost of checking, which experiment should run next? We treat this as experimental design: pick the check expected to improve the conclusion most per unit of cost.</p>
+          </div>
+        </div>
+        <div class="thrust">
+          <div class="num">04</div>
+          <div><h3>Knowledge that stays current</h3></div>
+          <div>
+            <p>A shared knowledge base keeps changing as work progresses and evidence arrives, and parts of it become outdated, superseded, or stale. Unlike code, knowledge has no test suite, and much of it is judgment rather than fact.</p>
+            <p class="q">What stands in for regression tests for knowledge? We study blind spots, maps of which questions the knowledge base can and can't answer, and how to say "not found" honestly, which is only evidence when the search could have found it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="mono">Foundations</div>
+        <h2>Selected prior work.</h2>
+        <p>Earlier research on deciding what data is worth acquiring and when a model's output can be trusted.</p>
+      </div>
+      <ul class="pubs">
+        <li><span class="t">Data acquisition via experimental design for data markets</span><span class="m">Lu, Huang, Karimireddy, Vepakomma, Jordan, Raskar · NeurIPS 2024</span></li>
+        <li><span class="t">Federated conformal predictors for distributed uncertainty quantification</span><span class="m">Lu, Yu, Karimireddy, Jordan, Raskar · ICML 2023</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap final">
+      <div class="mono">Contact</div>
+      <h2>Bring Pica to your lab.</h2>
+      <p>We're working with a small group of research teams. Tell us what you're working on and we'll be in touch.</p>
+      <p class="email"><a href="mailto:clu2033@gmail.com?subject=Pica">clu2033@gmail.com</a></p>
+      <a class="btn btn-primary" href="mailto:clu2033@gmail.com?subject=Pica%20early%20access">Request early access</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Pica · <a href="mailto:clu2033@gmail.com">clu2033@gmail.com</a></p>
+    <p><i>Pica</i> — knowledge agents for science</p>
+  </div>
+</footer>
+
+</body>
+</html>
