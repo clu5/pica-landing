@@ -208,3 +208,37 @@ section { padding: 72px 0; }
   .crow > span:last-child { padding-bottom: 14px; }
   .chead { display: none; }
 }
+
+/* v4: personal knowledge, simpler layout */
+nav ul { align-items: center; }
+section { padding: 88px 0; }
+h2.h, .narrow h2, .split h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 40px; }
+.narrow > * { max-width: 760px; }
+.narrow h2 { margin-bottom: 20px; }
+p.big { font-size: 21px; line-height: 1.55; color: var(--muted); margin: 0 0 16px; }
+.ticks { list-style: none; padding: 0; margin: -8px 0 32px; display: grid; gap: 8px; }
+.ticks li { padding-left: 26px; position: relative; color: var(--ink); font-size: 16px; }
+.ticks li::before { content: ""; position: absolute; left: 2px; top: 7px; width: 12px; height: 7px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 40px; }
+.feat h3 { font-family: Inter, sans-serif; font-size: 18px; font-weight: 600; margin: 16px 0 6px; letter-spacing: 0; }
+.feat p { color: var(--muted); margin: 0; font-size: 16px; }
+.chat { max-width: 680px; display: grid; gap: 14px; }
+.chat .q { justify-self: end; background: var(--ink); color: var(--bg); padding: 14px 20px; border-radius: 18px 18px 4px 18px; font-size: 17px; max-width: 85%; }
+.chat .a { background: var(--surface); border: 1px solid var(--line); padding: 20px 24px; border-radius: 18px 18px 18px 4px; max-width: 90%; }
+.chat .a p { margin: 0 0 10px; font-size: 17px; }
+.chat .a p:last-child { margin: 0; }
+.chat .src { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--accent); background: var(--glow); padding: 2px 8px; border-radius: 6px; margin-left: 6px; white-space: nowrap; }
+.split { display: grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: start; }
+.split h2 { margin: 0; }
+.final h2 { margin: 0 auto 14px; }
+.final p { margin-bottom: 28px; }
+@media (max-width: 860px) {
+  .feats { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .split { grid-template-columns: 1fr; gap: 16px; }
+  section { padding: 64px 0; }
+}
+@media (max-width: 520px) {
+  .feats { grid-template-columns: 1fr; }
+  p.big { font-size: 18px; }
+  .chat .q, .chat .a { max-width: 100%; }
+}
