@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pica — Knowledge agents for science</title>
-<meta name="description" content="Pica builds knowledge agents that turn scattered research into a shared, reliable knowledge layer — refined in the background, checked by independent evidence, and kept current.">
+<meta name="description" content="Pica builds knowledge agents for research teams. They turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base.">
 <meta property="og:title" content="Pica — Knowledge agents for science">
-<meta property="og:description" content="Pica builds knowledge agents that turn scattered research into a shared, reliable knowledge layer — refined in the background, checked by independent evidence, and kept current.">
+<meta property="og:description" content="Pica builds knowledge agents for research teams. They turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base.">
 <meta property="og:image" content="https://clu5.github.io/pica-landing/assets/logo.png">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +20,9 @@
     <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="30" height="30">Pica</a>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="research.html">Research</a></li>
+      <li><a href="approach.html">Approach</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a class="btn btn-primary" href="#contact">Join the waitlist</a></li>
+      <li><a class="btn btn-primary" href="index.html#contact">Join the waitlist</a></li>
     </ul>
   </nav>
 </header>
@@ -31,11 +31,11 @@
   <div class="wrap hero">
     <div>
       <div class="mono">Knowledge agents for science</div>
-      <h1>Turn scattered research into <em>working knowledge</em>.</h1>
-      <p class="lede">For research labs and clinical research groups. Pica's agents work in the background, refining your experiments, notes, and papers into a shared knowledge layer, checking each other's work, and keeping it current as the evidence changes.</p>
+      <h1>Your team knows more than it <em>has written down</em>.</h1>
+      <p class="lede">Pica builds knowledge agents for research teams. They turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base, capturing what teams know but rarely write down or share.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#contact">Join the waitlist</a>
-        <a class="btn btn-ghost" href="research.html">Read the research</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
     </div>
     <div class="graph" aria-hidden="true">
@@ -69,11 +69,11 @@
 
   <section id="problem">
     <div class="wrap why">
-      <blockquote>The knowledge that matters most in science is <span>distributed, specialized, and internal</span>.</blockquote>
+      <blockquote>Most of what a research team knows is <span>siloed and never written up</span>.</blockquote>
       <ul>
-        <li><strong>It isn't in the training data</strong>Experiment logs, run configs, lab notebooks, protocols, unpublished results, and clinical datasets are invisible to general-purpose models.</li>
-        <li><strong>It isn't always factual</strong>It's full of hypotheses, judgment calls, and results that later get superseded.</li>
-        <li><strong>Today's tools start from scratch</strong>Retrieval finds what exists but can't separate evidence from noise. Agents re-read every source on every question and leave nothing behind.</li>
+        <li><strong>It's scattered</strong>Results live in lab notes, decisions in chat threads, methods in code, data in databases, and context in papers. No one place holds the whole picture.</li>
+        <li><strong>It's tacit</strong>Why an approach was dropped, which dataset version to trust, what was already tried: it's rarely captured, and it leaves when people do.</li>
+        <li><strong>It's invisible to AI tools</strong>Internal knowledge isn't in any model's training data, and search can find a document but not tell you what your team actually concluded.</li>
       </ul>
     </div>
   </section>
@@ -82,24 +82,24 @@
     <div class="wrap">
       <div class="section-head">
         <div class="mono">What Pica does</div>
-        <h2>A knowledge layer that gets better with use.</h2>
-        <p>Most knowledge agents will mostly talk to each other, and meet people only through simple interfaces. That makes trust in the shared layer the thing to get right.</p>
+        <h2>A shared knowledge base that maintains itself.</h2>
+        <p>Pica's agents work in the background, reading what your team produces and keeping a living record of what it knows.</p>
       </div>
       <div class="grid3">
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></svg></div>
-          <h3>A knowledge refinery</h3>
-          <p>Agents turn raw sources into durable structure: extracted findings, indexes, crosswalks between datasets, and documentation of each source. Each question becomes cheaper and better answered than the last. Knowledge compounds.</p>
+          <h3>Captures what's known</h3>
+          <p>Agents pull findings, decisions, and methods out of everyday work and organize them into linked notes, so knowledge builds up instead of getting lost.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Reliable from unreliable parts</h3>
-          <p>Every finding is scored by how much independent evidence supports it. Five agents repeating one shared run count once, and the search behind a "best" result stays on the record.</p>
+          <h3>Cited and checked</h3>
+          <p>Every claim links back to where it came from. Pica weighs how well each finding is supported and flags where sources disagree.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/></svg></div>
           <h3>Kept current</h3>
-          <p>As new work lands, parts of any knowledge base go stale or get superseded. Pica tracks what depends on what and rechecks when the evidence underneath shifts.</p>
+          <p>As work moves on, knowledge goes stale or gets superseded. Pica notices when the underlying evidence changes and updates what depends on it.</p>
         </div>
       </div>
     </div>
@@ -109,15 +109,15 @@
     <div class="wrap">
       <div class="section-head">
         <div class="mono">An example</div>
-        <h2>One finding, three agents, forty runs.</h2>
-        <p>Your agents run ML experiments overnight. In the morning, three of them report that a new augmentation improves accuracy. Should you believe it?</p>
+        <h2>"Have we tried this before?"</h2>
+        <p>A new team member wants to try an idea. Instead of asking around, they ask Pica.</p>
       </div>
       <div class="trace">
-        <div class="trace-row"><span class="k">Reports</span><span>3 agents report the improvement</span></div>
-        <div class="trace-row"><span class="k">Provenance</span><span>2 of the 3 reports come from the same training run, so there are <b>2 independent reports, not 3</b></span></div>
-        <div class="trace-row"><span class="k">Selection</span><span>The reported config was <b>the best of 40</b> tried, and the other 39 were never written up</span></div>
-        <div class="trace-row"><span class="k">Assessment</span><span>Support is weaker than it looks. The main doubt is selection, not noise</span></div>
-        <div class="trace-row hl"><span class="k">Next check</span><span>Evaluate on fresh held-out data before spending compute on more reruns, since rerunning the winner can't reveal how it was chosen</span></div>
+        <div class="trace-row"><span class="k">Lab notes</span><span>A similar approach was tested last spring, with <b>mixed results</b></span></div>
+        <div class="trace-row"><span class="k">Messages</span><span>The team dropped it because of <b>a data quality issue</b> that has since been fixed</span></div>
+        <div class="trace-row"><span class="k">GitHub</span><span>The original code is still on a branch, and the <b>fix landed later</b> in the main pipeline</span></div>
+        <div class="trace-row"><span class="k">Papers</span><span>Two recent papers report the approach working in a related setting</span></div>
+        <div class="trace-row hl"><span class="k">Answer</span><span>Worth revisiting. The reason it was dropped no longer applies. Every point above links to its source</span></div>
       </div>
       <p class="note">Illustrative example.</p>
     </div>
@@ -133,17 +133,17 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></div>
           <h3>Your markdown vault</h3>
-          <p>The knowledge layer lives as plain markdown files, so it works with Obsidian and git. Agents write and maintain linked notes, each claim tied to its source. You can read, edit, and keep all of it.</p>
+          <p>The knowledge base lives as plain markdown files, so it works with Obsidian and git. You can read, edit, and keep all of it.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></div>
           <h3>Web app</h3>
-          <p>Ask questions, browse the knowledge map, and see the evidence behind each finding: what supports it, what conflicts with it, and what has gone stale.</p>
+          <p>Ask questions, browse the knowledge map, and see the sources behind each answer, including what conflicts and what's out of date.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13 5l-2 14"/></svg></div>
           <h3>API for your agents</h3>
-          <p>Your own agents query the knowledge layer and contribute to it. Answers come back with sources and how well supported they are, so one agent's error doesn't quietly become another's input.</p>
+          <p>Your own agents can query the knowledge base and contribute to it, with sources attached to every answer.</p>
         </div>
       </div>
     </div>
@@ -153,21 +153,21 @@
     <div class="wrap">
       <div class="section-head">
         <div class="mono">Who it's for</div>
-        <h2>Built for labs and clinical research.</h2>
+        <h2>Built for research teams.</h2>
       </div>
     </div>
     <div class="wrap grid2">
       <div class="insight">
-        <div class="tag">For research labs</div>
-        <h3>A lab's memory that doesn't graduate</h3>
-        <p>Results, failed attempts, and know-how are spread across students' notebooks, Slack threads, and experiment logs, and they leave when people do.</p>
-        <p>Pica keeps a lab's working knowledge in one place, current and cited, for people and their agents.</p>
+        <div class="tag">Research labs</div>
+        <h3>A lab memory that doesn't graduate</h3>
+        <p>Results, failed attempts, and know-how are spread across people, notebooks, and threads, and they leave when people move on.</p>
+        <p>Pica keeps the lab's working knowledge in one place, current and cited.</p>
       </div>
       <div class="insight">
-        <div class="tag">For clinical research</div>
+        <div class="tag">Clinical research</div>
         <h3>Evidence you can trace</h3>
-        <p>Clinical knowledge is spread across protocols, internal datasets, and fast-moving literature, and it can't be pooled into a public model.</p>
-        <p>Pica ties every finding to its source and flags what has been superseded. It's built by a team that has shipped an FDA-cleared clinical AI device.</p>
+        <p>Clinical knowledge is spread across protocols, internal datasets, and fast-moving literature, and much of it can't leave the organization.</p>
+        <p>Pica ties every finding to its source and flags what has been superseded.</p>
       </div>
     </div>
   </section>
@@ -176,51 +176,15 @@
     <div class="wrap">
       <div class="section-head">
         <div class="mono">How it works</div>
-        <h2>From scattered sources to grounded answers.</h2>
+        <h2>From scattered sources to a shared knowledge base.</h2>
       </div>
       <div class="steps">
-        <div class="step"><h3>Connect</h3><p>Point Pica at papers, experiment logs, notebooks, datasets, and internal documents.</p></div>
-        <div class="step"><h3>Refine</h3><p>Background agents decide what's worth building, within a budget, and maintain it against drift.</p></div>
-        <div class="step"><h3>Check</h3><p>Findings are weighed by independent support, and the next check goes where it would change the most.</p></div>
-        <div class="step"><h3>Answer</h3><p>Every claim is cited to its source. When the knowledge isn't there, Pica says so and names the gap.</p></div>
+        <div class="step"><h3>Connect</h3><p>Link lab notes, messaging, GitHub, databases, and paper libraries.</p></div>
+        <div class="step"><h3>Capture</h3><p>Agents extract findings, decisions, and methods, and link them to their sources.</p></div>
+        <div class="step"><h3>Maintain</h3><p>As new work lands, agents reconcile conflicts and retire what's out of date.</p></div>
+        <div class="step"><h3>Answer</h3><p>Ask in plain language and get a cited answer, or a clear note that the team doesn't know yet.</p></div>
       </div>
-    </div>
-  </section>
-
-  <section id="research">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="mono">Research</div>
-        <h2>Reliable knowledge from unreliable agents.</h2>
-        <p>Pica grows out of research at the MIT Media Lab on how agent-written knowledge can be more reliable than any agent that contributes to it.</p>
-      </div>
-      <div class="grid2">
-        <div class="insight">
-          <div class="tag">Economics</div>
-          <h3>Knowledge structure is capital</h3>
-          <p>Agents work under real budgets of tokens, tool calls, and time, and most of the value sits in a small share of sources.</p>
-          <p>Pica treats what agents build as an investment: chosen for expected value, maintained, and retired when it stops paying off.</p>
-        </div>
-        <div class="insight">
-          <div class="tag">Independence</div>
-          <h3>Agreement isn't confirmation</h3>
-          <p>Agents can agree without adding any independent support, and models tend to over-count repeated evidence.</p>
-          <p>Pica records where each piece of evidence came from and counts it once.</p>
-        </div>
-        <div class="insight">
-          <div class="tag">Selection</div>
-          <h3>The best result hides the search</h3>
-          <p>A result that was the best of forty attempts can reproduce perfectly and still fail on new data.</p>
-          <p>Pica keeps the history behind a finding, not just the winner.</p>
-        </div>
-        <div class="insight">
-          <div class="tag">Experimental design</div>
-          <h3>Spend checks where they matter</h3>
-          <p>A rerun, fresh data, and an audit each cost something and each answer a different doubt.</p>
-          <p>Pica picks the check expected to improve the conclusion most per unit of cost.</p>
-        </div>
-      </div>
-      <a class="more" href="research.html">Read more about the research →</a>
+      <a class="more" href="approach.html">Our approach →</a>
     </div>
   </section>
 
@@ -233,7 +197,7 @@
       <div>
         <div class="mono">Why Pica</div>
         <h2>Named for one of the most intelligent birds.</h2>
-        <p>The magpie, <i>Pica pica</i>, recognizes itself in a mirror, uses tools, and stores food across seasons and remembers where it hid it. Our agents gather what a field knows and remember where each piece came from.</p>
+        <p>The magpie, <i>Pica pica</i>, recognizes itself in a mirror, uses tools, and stores food across seasons and remembers where it hid it. Our agents gather what a team knows and remember where each piece came from.</p>
         <a class="more" href="about.html">About Pica →</a>
       </div>
     </div>
