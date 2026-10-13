@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pica — Knowledge agents for science</title>
+<meta name="description" content="Pica builds knowledge agents that read, connect, and reason over the scientific literature — so researchers can find what's known, what isn't, and what to try next.">
+<meta property="og:title" content="Pica — Knowledge agents for science">
+<meta property="og:description" content="Agents that read, connect, and reason over the scientific literature.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%230d1b2a'/><path d='M9 20c3-8 9-11 15-9-4 1-6 4-7 8l-8 1z' fill='%23f4f1ea'/><circle cx='20' cy='13' r='1.4' fill='%230d1b2a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --ink: #0d1b2a;
+    --muted: #55606e;
+    --line: #e2ded4;
+    --accent: #1f6f78;
+    --accent-ink: #ffffff;
+    --glow: #d9ecee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1320;
+      --surface: #111c2c;
+      --ink: #eef1f4;
+      --muted: #9aa6b5;
+      --line: #1f2c3f;
+      --accent: #5cc4cc;
+      --accent-ink: #062027;
+      --glow: #123040;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.6 Inter, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; margin: 0; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+
+  /* nav */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: Fraunces, serif; font-size: 22px; font-weight: 600; }
+  .brand svg { width: 30px; height: 30px; }
+  nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; font-size: 15px; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--ink); }
+
+  /* buttons */
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 500; font-size: 15px; text-decoration: none; transition: transform .15s, opacity .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+
+  /* hero */
+  .hero { padding: 72px 0 96px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(40px, 6vw, 68px); margin: 14px 0 22px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p.lede { font-size: 20px; color: var(--muted); max-width: 34ch; margin: 0 0 32px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* graph visual */
+  .graph { position: relative; aspect-ratio: 1; border-radius: 28px; background: radial-gradient(circle at 50% 45%, var(--glow), transparent 70%); }
+  .graph svg { width: 100%; height: 100%; }
+  .graph .edge { stroke: var(--line); stroke-width: 1.5; }
+  .graph .edge.hot { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 5; animation: flow 3s linear infinite; }
+  .graph .node { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+  .graph .node.hot { stroke: var(--accent); stroke-width: 2; }
+  .graph text { font: 11px "JetBrains Mono", monospace; fill: var(--muted); }
+  .graph .core { fill: var(--ink); }
+  @keyframes flow { to { stroke-dashoffset: -36; } }
+  @media (prefers-reduced-motion: reduce) { .graph .edge.hot { animation: none; } }
+
+  /* sections */
+  section { padding: 88px 0; border-top: 1px solid var(--line); }
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+  .section-head h2 { font-size: clamp(30px, 4vw, 42px); margin-top: 10px; }
+  .section-head p { color: var(--muted); font-size: 18px; margin: 16px 0 0; }
+
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+  .card h3 { font-size: 22px; margin: 14px 0 10px; }
+  .card p { color: var(--muted); margin: 0; font-size: 16px; }
+  .icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: var(--glow); color: var(--accent); }
+  .icon svg { width: 22px; height: 22px; }
+
+  /* steps */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: s; }
+  .step { padding: 0 24px 0 0; position: relative; }
+  .step::before { counter-increment: s; content: "0" counter(s); font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); display: block; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+  .step h3 { font-size: 20px; margin-bottom: 8px; }
+  .step p { color: var(--muted); margin: 0; font-size: 15.5px; }
+
+  /* quote-ish block */
+  .why { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .why blockquote { margin: 0; font-family: Fraunces, serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.3; }
+  .why blockquote span { color: var(--accent); }
+  .why ul { margin: 0; padding: 0; list-style: none; }
+  .why li { padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+  .why li strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; }
+
+  /* cta block */
+  .final { text-align: center; }
+  .final h2 { font-size: clamp(32px, 4.5vw, 48px); max-width: 18ch; margin: 12px auto 18px; }
+  .final p { color: var(--muted); max-width: 52ch; margin: 0 auto 32px; }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer p { margin: 0; }
+  footer i { font-family: Fraunces, serif; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding: 40px 0 64px; gap: 32px; }
+    .graph { max-width: 420px; margin: 0 auto; width: 100%; }
+    .grid3, .why { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 36px 0; }
+    nav ul li:not(:last-child) { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav>
+    <a class="brand" href="#">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M9 20c3-8 9-11 15-9-4 1-6 4-7 8l-8 1z" fill="var(--bg)"/><circle cx="20" cy="13" r="1.4" fill="currentColor"/></svg>
+      Pica
+    </a>
+    <ul>
+      <li><a href="#what">What it does</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#why">Why Pica</a></li>
+      <li><a class="btn btn-primary" href="#contact">Request access</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <div class="mono">Knowledge agents for science</div>
+      <h1>Know what science <em>already knows</em>.</h1>
+      <p class="lede">Pica builds agents that read, connect, and reason over the research literature — so you can see what's established, what's contested, and what's still open.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact">Request early access</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+    </div>
+
+    <div class="graph" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <line class="edge" x1="200" y1="200" x2="90" y2="110"/>
+        <line class="edge hot" x1="200" y1="200" x2="310" y2="95"/>
+        <line class="edge" x1="200" y1="200" x2="330" y2="230"/>
+        <line class="edge hot" x1="200" y1="200" x2="110" y2="300"/>
+        <line class="edge" x1="200" y1="200" x2="250" y2="330"/>
+        <line class="edge" x1="90" y1="110" x2="60" y2="210"/>
+        <line class="edge hot" x1="310" y1="95" x2="330" y2="230"/>
+        <line class="edge" x1="110" y1="300" x2="60" y2="210"/>
+        <line class="edge" x1="250" y1="330" x2="330" y2="230"/>
+        <circle class="node" cx="90" cy="110" r="16"/>
+        <circle class="node hot" cx="310" cy="95" r="18"/>
+        <circle class="node" cx="330" cy="230" r="14"/>
+        <circle class="node hot" cx="110" cy="300" r="17"/>
+        <circle class="node" cx="250" cy="330" r="13"/>
+        <circle class="node" cx="60" cy="210" r="11"/>
+        <circle class="core" cx="200" cy="200" r="30"/>
+        <path d="M186 208c3-9 10-13 18-11-5 1-7 5-8 10l-10 1z" fill="var(--bg)"/>
+        <text x="62" y="80">paper</text>
+        <text x="282" y="62">claim</text>
+        <text x="300" y="268">method</text>
+        <text x="72" y="340">dataset</text>
+        <text x="228" y="368">result</text>
+        <text x="14" y="242">gap</text>
+      </svg>
+    </div>
+  </div>
+
+  <section id="what">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="mono">What it does</div>
+        <h2>A research collaborator that has read everything relevant.</h2>
+        <p>The literature grows faster than anyone can read it. Pica's agents do the reading, keep track of the evidence, and show their work.</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div>
+          <h3>Deep literature search</h3>
+          <p>Ask a research question in plain language. Agents search across papers, preprints, and data, and follow citations until the trail runs out.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="8" r="2.5"/><circle cx="10" cy="18" r="2.5"/><path d="M8.3 7l7.3.8M7 8.2l2.3 7.4M16.6 10.1l-5 6"/></svg></div>
+          <h3>Living knowledge maps</h3>
+          <p>Claims, methods, datasets, and results are linked into a structured map of a field that updates as new work is published.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Gaps and next steps</h3>
+          <p>Pica reports what's well supported, where findings conflict, and which questions nobody has tested yet — with a clear sense of how hard it looked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="mono">How it works</div>
+        <h2>From question to grounded answer.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Ask</h3><p>Start with a question, a hypothesis, or a paper you want to build on.</p></div>
+        <div class="step"><h3>Read</h3><p>Agents gather and read the relevant literature, extracting claims and the evidence behind them.</p></div>
+        <div class="step"><h3>Connect</h3><p>Findings are reconciled across sources: agreements, contradictions, and missing links.</p></div>
+        <div class="step"><h3>Answer</h3><p>You get a cited synthesis, a map of the evidence, and concrete open questions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap why">
+      <blockquote>Named for the magpie, <span><i>Pica pica</i></span> — a bird that gathers what it finds and remembers where it put it.</blockquote>
+      <ul>
+        <li><strong>Every claim is cited</strong>Answers link back to the exact passages they came from.</li>
+        <li><strong>Calibrated about absence</strong>"We found nothing" means something only when the search could have found it. Pica tells you how thorough it was.</li>
+        <li><strong>Built for researchers</strong>Designed with working scientists, for the way research actually happens.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap final">
+      <div class="mono">Early access</div>
+      <h2>Bring Pica to your lab.</h2>
+      <p>We're working with a small group of research teams. Tell us what you're working on and we'll be in touch.</p>
+      <a class="btn btn-primary" href="mailto:clu2033@gmail.com?subject=Pica%20early%20access">Get in touch</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Pica</p>
+    <p><i>Pica</i> — knowledge agents for science</p>
+  </div>
+</footer>
+
+</body>
+</html>
