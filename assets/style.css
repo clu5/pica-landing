@@ -189,3 +189,22 @@ section { padding: 72px 0; }
 .section-head { margin-bottom: 36px; }
 @media (max-width: 860px) { .grid4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .grid4 { grid-template-columns: 1fr; } }
+.compare { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--surface); }
+.crow { display: grid; grid-template-columns: 120px 1fr 1fr 1.3fr; border-bottom: 1px solid var(--line); }
+.crow:last-child { border-bottom: 0; }
+.crow > span { padding: 14px 18px; font-size: 15px; color: var(--muted); }
+.crow > span:first-child { font-family: "JetBrains Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding-top: 17px; }
+.crow .us { background: var(--glow); color: var(--ink); font-weight: 500; }
+.chead > span { font-weight: 600; color: var(--ink); font-size: 14px; }
+.chead .us { color: var(--accent); }
+@media (max-width: 720px) {
+  .crow { grid-template-columns: 1fr; }
+  .crow > span { padding: 6px 18px; }
+  .crow > span:first-child { padding-top: 14px; color: var(--accent); }
+  .crow > span:not(:first-child)::before { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; color: var(--muted); display: block; }
+  .crow > span:nth-child(2)::before { content: "Search & RAG"; }
+  .crow > span:nth-child(3)::before { content: "Agent memory"; }
+  .crow > span:nth-child(4)::before { content: "Pica"; color: var(--accent); }
+  .crow > span:last-child { padding-bottom: 14px; }
+  .chead { display: none; }
+}
