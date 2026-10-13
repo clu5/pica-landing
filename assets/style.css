@@ -170,3 +170,12 @@ footer a { color: inherit; }
 .magpie-strip .more { margin-top: 24px; }
 @media (max-width: 860px) { .magpie-strip { grid-template-columns: 1fr; gap: 28px; } }
 .page-hero + .wrap { padding-bottom: 72px; }
+.trace { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; max-width: 860px; }
+.trace-row { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 16px 24px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 16px; }
+.trace-row:last-child { border-bottom: 0; }
+.trace-row .k { font-family: "JetBrains Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding-top: 3px; }
+.trace-row b { color: var(--ink); font-weight: 600; }
+.trace-row.hl { background: var(--glow); color: var(--ink); }
+.trace-row.hl .k { color: var(--accent); }
+.note { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+@media (max-width: 520px) { .trace-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 18px; } }
