@@ -179,3 +179,13 @@ footer a { color: inherit; }
 .trace-row.hl .k { color: var(--accent); }
 .note { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
 @media (max-width: 520px) { .trace-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 18px; } }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.grid4 .card h3, .grid3 .card h3 { font-size: 21px; }
+.tight h3 { font-size: 24px; margin-bottom: 6px; }
+.tight p { color: var(--muted); margin: 0; }
+.tight > div { border-top: 2px solid var(--accent); padding-top: 18px; }
+.final .email { margin: 0 auto; font-size: 20px; }
+section { padding: 72px 0; }
+.section-head { margin-bottom: 36px; }
+@media (max-width: 860px) { .grid4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .grid4 { grid-template-columns: 1fr; } }

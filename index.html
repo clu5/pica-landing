@@ -6,7 +6,7 @@
 <title>Pica — Knowledge agents for science</title>
 <meta name="description" content="Pica builds knowledge agents for research teams. They turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base.">
 <meta property="og:title" content="Pica — Knowledge agents for science">
-<meta property="og:description" content="Pica builds knowledge agents for research teams. They turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base.">
+<meta property="og:description" content="Knowledge agents that turn a research team's scattered work into a shared, cited knowledge base.">
 <meta property="og:image" content="https://clu5.github.io/pica-landing/assets/logo.png">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,15 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
 <header class="wrap">
   <nav>
-    <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="30" height="30">Pica</a>
+    <a class="brand" href="#"><img src="assets/logo.png" alt="" width="30" height="30">Pica</a>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="approach.html">Approach</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a class="btn btn-primary" href="index.html#contact">Join the waitlist</a></li>
+      <li><a href="#what">What it does</a></li>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#where">Where</a></li>
+      <li><a class="btn btn-primary" href="#contact">Join the waitlist</a></li>
     </ul>
   </nav>
 </header>
@@ -32,10 +33,9 @@
     <div>
       <div class="mono">Knowledge agents for science</div>
       <h1>Your team knows more than it <em>has written down</em>.</h1>
-      <p class="lede">Pica builds knowledge agents for research teams. They turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base, capturing what teams know but rarely write down or share.</p>
+      <p class="lede">Pica's agents turn lab notes, messages, GitHub repos, databases, and papers into a shared, cited knowledge base.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#contact">Join the waitlist</a>
-        <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
     </div>
     <div class="graph" aria-hidden="true">
@@ -68,137 +68,48 @@
   </div>
 
   <section id="problem">
-    <div class="wrap why">
-      <blockquote>Most of what a research team knows is <span>siloed and never written up</span>.</blockquote>
-      <ul>
-        <li><strong>It's scattered</strong>Results live in lab notes, decisions in chat threads, methods in code, data in databases, and context in papers. No one place holds the whole picture.</li>
-        <li><strong>It's tacit</strong>Why an approach was dropped, which dataset version to trust, what was already tried: it's rarely captured, and it leaves when people do.</li>
-        <li><strong>It's invisible to AI tools</strong>Internal knowledge isn't in any model's training data, and search can find a document but not tell you what your team actually concluded.</li>
-      </ul>
+    <div class="wrap">
+      <div class="section-head"><div class="mono">The problem</div><h2>Research knowledge is siloed.</h2></div>
+      <div class="grid3 tight">
+        <div><h3>Scattered</h3><p>Across notes, chats, code, data, and papers.</p></div>
+        <div><h3>Unwritten</h3><p>Why things were tried, dropped, or trusted.</p></div>
+        <div><h3>Lost</h3><p>It leaves when people do.</p></div>
+      </div>
     </div>
   </section>
 
   <section id="what">
     <div class="wrap">
-      <div class="section-head">
-        <div class="mono">What Pica does</div>
-        <h2>A shared knowledge base that maintains itself.</h2>
-        <p>Pica's agents work in the background, reading what your team produces and keeping a living record of what it knows.</p>
-      </div>
-      <div class="grid3">
-        <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></svg></div>
-          <h3>Captures what's known</h3>
-          <p>Agents pull findings, decisions, and methods out of everyday work and organize them into linked notes, so knowledge builds up instead of getting lost.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Cited and checked</h3>
-          <p>Every claim links back to where it came from. Pica weighs how well each finding is supported and flags where sources disagree.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/></svg></div>
-          <h3>Kept current</h3>
-          <p>As work moves on, knowledge goes stale or gets superseded. Pica notices when the underlying evidence changes and updates what depends on it.</p>
-        </div>
+      <div class="section-head"><div class="mono">What Pica does</div><h2>A knowledge base that maintains itself.</h2></div>
+      <div class="grid4">
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></svg></div><h3>Captures</h3><p>Findings, decisions, and methods from everyday work.</p></div>
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 6 0l3-3a4 4 0 0 0-6-6l-1 1"/><path d="M14 10a4 4 0 0 0-6 0l-3 3a4 4 0 0 0 6 6l1-1"/></svg></div><h3>Cites</h3><p>Every claim links to its source.</p></div>
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Checks</h3><p>Weighs evidence and flags conflicts.</p></div>
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/></svg></div><h3>Updates</h3><p>Retires what's stale or superseded.</p></div>
       </div>
     </div>
   </section>
 
   <section id="example">
     <div class="wrap">
-      <div class="section-head">
-        <div class="mono">An example</div>
-        <h2>"Have we tried this before?"</h2>
-        <p>A new team member wants to try an idea. Instead of asking around, they ask Pica.</p>
-      </div>
+      <div class="section-head"><div class="mono">Example</div><h2>"Have we tried this before?"</h2></div>
       <div class="trace">
-        <div class="trace-row"><span class="k">Lab notes</span><span>A similar approach was tested last spring, with <b>mixed results</b></span></div>
-        <div class="trace-row"><span class="k">Messages</span><span>The team dropped it because of <b>a data quality issue</b> that has since been fixed</span></div>
-        <div class="trace-row"><span class="k">GitHub</span><span>The original code is still on a branch, and the <b>fix landed later</b> in the main pipeline</span></div>
-        <div class="trace-row"><span class="k">Papers</span><span>Two recent papers report the approach working in a related setting</span></div>
-        <div class="trace-row hl"><span class="k">Answer</span><span>Worth revisiting. The reason it was dropped no longer applies. Every point above links to its source</span></div>
+        <div class="trace-row"><span class="k">Lab notes</span><span>Tried last spring, <b>mixed results</b></span></div>
+        <div class="trace-row"><span class="k">Messages</span><span>Dropped over <b>a data issue</b>, since fixed</span></div>
+        <div class="trace-row"><span class="k">GitHub</span><span>Code still on a branch; <b>fix is in main</b></span></div>
+        <div class="trace-row"><span class="k">Papers</span><span>Two recent papers report it working</span></div>
+        <div class="trace-row hl"><span class="k">Answer</span><span><b>Worth revisiting</b>, with sources for each point</span></div>
       </div>
-      <p class="note">Illustrative example.</p>
     </div>
   </section>
 
   <section id="where">
     <div class="wrap">
-      <div class="section-head">
-        <div class="mono">Where you use it</div>
-        <h2>Knowledge you own, in the tools you already use.</h2>
-      </div>
+      <div class="section-head"><div class="mono">Where you use it</div><h2>In the tools you already use.</h2></div>
       <div class="grid3">
-        <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></div>
-          <h3>Your markdown vault</h3>
-          <p>The knowledge base lives as plain markdown files, so it works with Obsidian and git. You can read, edit, and keep all of it.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></div>
-          <h3>Web app</h3>
-          <p>Ask questions, browse the knowledge map, and see the sources behind each answer, including what conflicts and what's out of date.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13 5l-2 14"/></svg></div>
-          <h3>API for your agents</h3>
-          <p>Your own agents can query the knowledge base and contribute to it, with sources attached to every answer.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="who">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="mono">Who it's for</div>
-        <h2>Built for research teams.</h2>
-      </div>
-    </div>
-    <div class="wrap grid2">
-      <div class="insight">
-        <div class="tag">Research labs</div>
-        <h3>A lab memory that doesn't graduate</h3>
-        <p>Results, failed attempts, and know-how are spread across people, notebooks, and threads, and they leave when people move on.</p>
-        <p>Pica keeps the lab's working knowledge in one place, current and cited.</p>
-      </div>
-      <div class="insight">
-        <div class="tag">Clinical research</div>
-        <h3>Evidence you can trace</h3>
-        <p>Clinical knowledge is spread across protocols, internal datasets, and fast-moving literature, and much of it can't leave the organization.</p>
-        <p>Pica ties every finding to its source and flags what has been superseded.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="how">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="mono">How it works</div>
-        <h2>From scattered sources to a shared knowledge base.</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><h3>Connect</h3><p>Link lab notes, messaging, GitHub, databases, and paper libraries.</p></div>
-        <div class="step"><h3>Capture</h3><p>Agents extract findings, decisions, and methods, and link them to their sources.</p></div>
-        <div class="step"><h3>Maintain</h3><p>As new work lands, agents reconcile conflicts and retire what's out of date.</p></div>
-        <div class="step"><h3>Answer</h3><p>Ask in plain language and get a cited answer, or a clear note that the team doesn't know yet.</p></div>
-      </div>
-      <a class="more" href="approach.html">Our approach →</a>
-    </div>
-  </section>
-
-  <section id="magpie">
-    <div class="wrap magpie-strip">
-      <figure class="magpie">
-        <img src="assets/magpie.jpg" alt="A Eurasian magpie standing on a mossy rock" width="1280" height="853" loading="lazy">
-        <figcaption>Eurasian magpie (<i>Pica pica</i>). Photo: Alexis Lours, <a href="https://commons.wikimedia.org/wiki/File:Eurasian_magpie_2024_03_03_02.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>.</figcaption>
-      </figure>
-      <div>
-        <div class="mono">Why Pica</div>
-        <h2>Named for one of the most intelligent birds.</h2>
-        <p>The magpie, <i>Pica pica</i>, recognizes itself in a mirror, uses tools, and stores food across seasons and remembers where it hid it. Our agents gather what a team knows and remember where each piece came from.</p>
-        <a class="more" href="about.html">About Pica →</a>
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></div><h3>Markdown vault</h3><p>Plain files you own. Works with Obsidian and git.</p></div>
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></div><h3>Web app</h3><p>Ask questions and browse the knowledge map.</p></div>
+        <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13 5l-2 14"/></svg></div><h3>API</h3><p>Your agents can query it and add to it.</p></div>
       </div>
     </div>
   </section>
@@ -207,9 +118,8 @@
     <div class="wrap final">
       <div class="mono">Early access</div>
       <h2>Join the waitlist.</h2>
-      <p>Pica is in early development. If you run a research lab or a clinical research group, email us with what you work on and we'll reach out as we open access.</p>
-      <p class="email"><a href="mailto:clu2033@gmail.com?subject=Pica">clu2033@gmail.com</a></p>
-      <a class="btn btn-primary" href="mailto:clu2033@gmail.com?subject=Pica%20waitlist">Join the waitlist</a>
+      <p>For research labs and clinical research groups.</p>
+      <p class="email"><a href="mailto:clu2033@gmail.com?subject=Pica%20waitlist">clu2033@gmail.com</a></p>
     </div>
   </section>
 </main>
@@ -217,7 +127,7 @@
 <footer>
   <div class="wrap">
     <p>© 2026 Pica · <a href="mailto:clu2033@gmail.com">clu2033@gmail.com</a></p>
-    <p><i>Pica</i> — knowledge agents for science</p>
+    <p>Named for the magpie, <i>Pica pica</i>, one of the most intelligent birds.</p>
   </div>
 </footer>
 
